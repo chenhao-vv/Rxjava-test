@@ -1,0 +1,53 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.mob.sdk'
+
+MobSDK {
+    appKey "2c3318c95ecef"
+    appSecret "b27555d020071a3a09a1781cf23dff00"
+    SMSSDK {}
+}
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+    defaultConfig {
+        applicationId "com.vivo.chmusicdemo"
+        minSdkVersion 26
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.preference:preference:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.makeramen:roundedimageview:2.2.1'
+    implementation 'com.vinaysshenoy:mugen:1.0.2'   //用于实现无限下拉
+    implementation 'com.afollestad.material-dialogs:core:0.9.1.0' //material dialog
+    implementation 'com.squareup.okhttp3:okhttp:3.14.4'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.9'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.7.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    implementation 'com.android.volley:volley:1.1.1'
+    //天气模块需要的依赖包
+    implementation 'org.litepal.android:java:3.0.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}

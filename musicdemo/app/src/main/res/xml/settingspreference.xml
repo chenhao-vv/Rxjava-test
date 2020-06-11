@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:key="personal_network"
+        android:title ="使用2G/3G/4G网络"/>
+
+    <ListPreference
+        android:key="mainfragment"
+        android:icon="@mipmap/img4"
+        android:title="选择首页展示"
+        android:entries="@array/main_fragment"
+        android:entryValues="@array/main_fragment_value"
+        android:dialogTitle="选择首页展示"/>
+
+    <PreferenceScreen
+        android:key="known"
+        android:title="我也不知道该说啥"
+        android:summary="真的好难啊"/>
+</PreferenceScreen>

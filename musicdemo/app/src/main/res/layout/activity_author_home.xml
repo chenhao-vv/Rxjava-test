@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/home_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:src="@mipmap/back"/>
+        <TextView
+            android:id="@+id/home_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="博客园"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.vivo.chmusicdemo.utils.RoundImageView
+        android:id="@+id/home_user_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:paddingTop="10dp"
+        android:src="@mipmap/avatar_default"
+        app:type="circle"/>
+    <TextView
+        android:id="@+id/home_title_after_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="作者名字"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/homepage_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingTop="10dp"
+        android:text="主页：http://www.baidu.com"
+        android:textSize="14sp"
+        android:textColor="@color/blue"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_articles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingTop="10dp"/>
+</LinearLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/phone_text"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:hint="@string/phonenumber"/>
+
+    <LinearLayout
+        android:id="@+id/layout_code"
+        android:orientation="horizontal"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/phone_text"
+        android:layout_alignLeft="@+id/phone_text">
+        <EditText
+            android:id="@+id/code"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/phone_text"
+            android:layout_alignLeft="@+id/phone_text"
+            android:hint="@string/code"/>
+        <Button
+            android:id="@+id/getcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/getcode"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layout_regis_account"
+        android:orientation="horizontal"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/layout_code"
+        android:layout_alignLeft="@id/phone_text">
+        <TextView
+            android:id="@+id/register_account"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="@string/registerAccount"
+            />
+        <EditText
+            android:id="@+id/edittext_regis_account"
+            android:layout_width="260dp"
+            android:layout_height="40dp"
+            android:hint="@string/input_regisaccount"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_regis_password"
+        android:orientation="horizontal"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/layout_regis_account"
+        android:layout_alignLeft="@id/layout_regis_account">
+        <TextView
+            android:id="@+id/register_password"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="@string/register_password"
+            />
+        <EditText
+            android:id="@+id/edittext_regis_password"
+            android:layout_width="260dp"
+            android:layout_height="40dp"
+            android:hint="@string/input_password"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_regis_password"
+        android:layout_centerHorizontal="true"
+        android:text="@string/register"/>
+
+
+</RelativeLayout>
