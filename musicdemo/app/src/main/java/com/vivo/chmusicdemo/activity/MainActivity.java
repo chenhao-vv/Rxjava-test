@@ -27,6 +27,10 @@ import com.vivo.chmusicdemo.fragment.SearchImageFragment;
 import com.vivo.chmusicdemo.fragment.SetThemeFragment;
 import com.vivo.chmusicdemo.adapter.FragmentPageAdapter;
 import com.vivo.chmusicdemo.R;
+import com.vivo.chmusicdemo.rxjava2.RxjavaTestActivity;
+import com.vivo.chmusicdemo.rxjava2.fragment.BackGroundTaskFragment;
+import com.vivo.chmusicdemo.rxjava2.fragment.BufferFragment;
+import com.vivo.chmusicdemo.rxjava2.fragment.SearchFragment;
 
 import java.util.ArrayList;
 
@@ -52,8 +56,6 @@ public class MainActivity extends AppCompatActivity{
     private ArrayList<String> mTabTitles = new ArrayList<>();
     private ArrayList<Fragment> mFragmentList = new ArrayList<>();
 
-    private RadioGroup mRadioGroup;
-
     @Override
     public void onCreate(Bundle savedBundleState) {
         super.onCreate(savedBundleState);
@@ -69,10 +71,14 @@ public class MainActivity extends AppCompatActivity{
 //        mSearchEdit.setOnClickListener(this);
         mTablayout = (TabLayout)findViewById(R.id.tablayout);
         mViewpager = (ViewPager)findViewById(R.id.main_ui_fragmentpager);
-        mFragmentList.add(new BlogListFragment());
+        mFragmentList.add(new BackGroundTaskFragment());
+        mFragmentList.add(new BufferFragment());
+        mFragmentList.add(new SearchFragment());
         mFragmentList.add(new SetThemeFragment());
         mFragmentList.add(new SearchImageFragment());
-        mTabTitles.add(getString(R.string.main_page));
+        mTabTitles.add("Rx1:后台下载");
+        mTabTitles.add("Rx2:平均温度");
+        mTabTitles.add("Rx3:优化搜索");
         mTabTitles.add("深色模式");
         mTabTitles.add("Rxjava2-basic");
         mFmAdapter = new FragmentPageAdapter(getSupportFragmentManager(), mFragmentList, mTabTitles);
@@ -92,23 +98,6 @@ public class MainActivity extends AppCompatActivity{
 
     }
 
-//    @Override
-//    public void onClick(View view) {
-//        switch (view.getId()) {
-//            case R.id.imagebutton_search:
-//            case R.id.edit_search:
-//                Intent FirstIntent = new Intent(this, SearchActivity.class);
-//                try {
-//                    startActivity(FirstIntent);
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//                break;
-//            default:
-//                break;
-//        }
-//    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar, menu);
@@ -119,12 +108,8 @@ public class MainActivity extends AppCompatActivity{
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.toolbar_search:
-                Intent FirstIntent = new Intent(this, SearchActivity.class);
-                try {
-                    startActivity(FirstIntent);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                Intent intent = new Intent(this, RxjavaTestActivity.class);
+                startActivity(intent);
                 break;
             case R.id.toolbar_setting:
                 break;

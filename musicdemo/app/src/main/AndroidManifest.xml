@@ -47,6 +47,7 @@
         <activity android:name=".activity.AuthorActivity"/>
         <activity android:name=".view.MineActivity"/>
         <activity android:name=".activity.AuthorHomeActivity"/>
+        <activity android:name=".rxjava2.RxjavaTestActivity"/>
     </application>
 
 </manifest>
